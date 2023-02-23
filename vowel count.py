@@ -1,6 +1,6 @@
 data = []
 counter = 1
-
+vowels = [x for x in 'aouiey']
 while True:
     line = input()
     if line:
@@ -8,9 +8,13 @@ while True:
             counter += 1
             continue
         else:
-            a, b, c = [int(x) for x in line.split()]
+            count = 0
+            for i in line:
+                if i in vowels:
+                    count += 1
+            data.append(count)
 
-            data.append(min(a,b,c))
+
     else:
         break
 
