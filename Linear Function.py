@@ -1,6 +1,5 @@
-counter = 0
-a = 1
-b = 1
+counter, a, b = 0, 1, 1
+result = []
 while True:
     line = input()
     if counter == 0:
@@ -8,10 +7,12 @@ while True:
         continue
     if line:
         x1, y1, x2, y2 = [int(x) for x in line.split()]
-        #y1 = (a * x1) + b
-        a = x1 // y1
-        b = x1 % y1
-        print(b)
+        a = int((y2 - y1) / (x2 - x1))
+        b = -a * x1 + y1
+        data = '('+str(a)+' '+str(b)+')'
+        result.append(data)
 
     else:
         break
+
+print(*result)
